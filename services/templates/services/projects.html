@@ -1,0 +1,178 @@
+{% extends 'services/base.html' %}
+
+{% block content %}
+<div class="banner-bg2">
+	<div class="banner-info bg3 inner">
+		<h3>one click repair service</h3>
+		<p>repair.&nbsp;improve.&nbsp;maintain</p>
+	</div>
+</div>
+<!-- breadcrumbs -->
+<div class="breadcrumbs-w3l">
+	<div class="container">
+		<span class="breadcrumbs">
+			<a href="index.html">Home</a> |
+			<span>Our Projects</span>
+		</span>
+	</div>
+</div>
+<!-- //breadcrumbs -->
+<!--Gallery  section starts here-->
+<div class="gallery  agileinfo w3ls-section" id="gallery">
+	<div class="container">
+		<h4 class="main-title">our projects</h4>
+	</div>
+	
+	<div class="bs-example bs-example-tabs services-main" role="tabpanel" data-example-id="togglable-tabs">
+		<ul id="myTab" class="nav nav-tabs" role="tablist">
+			<li role="presentation" class="active">
+				<a href="#home-main" id="home-tab" role="tab" data-toggle="tab" aria-controls="home-main" aria-expanded="true">All</a>
+			</li>
+			
+			<!--  -->
+			{% for tag in tag %}
+				<li role="presentation">
+					<a href="#{{ tag }}" role="tab" id="{{ tag }}-tab" data-toggle="tab" aria-controls="{{ tag }}">{{ tag }}</a>
+				</li>
+			{% endfor %}
+			<!--  -->
+		</ul>
+		<div id="myTabContent" class="tab-content">
+			<div role="tabpanel" class="tab-pane fade in active" id="home-main" aria-labelledby="home-tab">
+				<div class="w3_tab_img">
+					
+					{% for project in project %}
+						
+						<div class="col-md-3 col-sm-4  col-xs-6 w3_tab_img_left">
+							<div class="demo">
+								<a class="cm-overlay" href="{{ project.project_images.url }}">
+									<img src="{{ project.project_images.url }}" alt=" " class="img-responsive" />
+								</a>
+							</div>
+						</div>
+					{% endfor %}
+						
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+			
+			{% for prj in project %}
+			<div role="tabpanel" class="tab-pane fade" id="{{ prj.tag }}" aria-labelledby="{{ prj.tag }}-tab">
+				<div class="w3_tab_img">
+					
+						
+						{% for project in project %}
+							{% if prj.tag == project.tag %}
+								<div class="col-md-3 col-sm-4  col-xs-6 w3_tab_img_left">
+									<div class="demo">
+										<a class="cm-overlay" href="{{ project.project_images.url }}">
+											<img src="{{ project.project_images.url }}" alt=" " class="img-responsive" />
+										</a>
+									</div>
+								</div>
+							{% endif %}
+						{% endfor %}
+							
+						
+					
+					<!-- <div class="col-md-3 col-sm-4  col-xs-6 w3_tab_img_left">
+						<div class="demo">
+							<a class="cm-overlay" href="images/g4.jpg">
+								<img src="images/g4.jpg" alt=" " class="img-responsive" />
+							</a>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-4  col-xs-6 w3_tab_img_left">
+						<div class="demo">
+							<a class="cm-overlay" href="images/g5.jpg">
+								<img src="images/g5.jpg" alt=" " class="img-responsive" />
+							</a>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-4  col-xs-6 w3_tab_img_left">
+						<div class="demo">
+							<a class="cm-overlay" href="images/g3.jpg">
+								<img src="images/g3.jpg" alt=" " class="img-responsive" />
+							</a>
+						</div>
+					</div> -->
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+			{% endfor %}
+			<!-- <div role="tabpanel" class="tab-pane fade" id="playing" aria-labelledby="playing-tab">
+				<div class="w3_tab_img">
+					<div class="col-md-3 col-sm-4  col-xs-6  w3_tab_img_left">
+						<div class="demo">
+							<a class="cm-overlay" href="images/g5.jpg">
+								<img src="images/g5.jpg" alt=" " class="img-responsive" />
+							</a>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-4  col-xs-6 w3_tab_img_left">
+						<div class="demo">
+							<a class="cm-overlay" href="images/g6.jpg">
+								<img src="images/g6.jpg" alt=" " class="img-responsive" />
+							</a>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-4  col-xs-6 w3_tab_img_left">
+						<div class="demo">
+							<a class="cm-overlay" href="images/g1.jpg">
+								<img src="images/g1.jpg" alt=" " class="img-responsive" />
+							</a>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-4  col-xs-6 w3_tab_img_left">
+						<div class="demo">
+							<a class="cm-overlay" href="images/g2.jpg">
+								<img src="images/g2.jpg" alt=" " class="img-responsive" />
+							</a>
+						</div>
+					</div>
+
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+			<div role="tabpanel" class="tab-pane fade" id="school" aria-labelledby="school-tab">
+				<div class="w3_tab_img">
+					<div class="col-md-3 col-sm-4  col-xs-6 w3_tab_img_left">
+						<div class="demo">
+							<a class="cm-overlay" href="images/g3.jpg">
+								<img src="images/g3.jpg" alt=" " class="img-responsive" />
+							</a>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-4  col-xs-6 w3_tab_img_left">
+						<div class="demo">
+							<a class="cm-overlay" href="images/g4.jpg">
+								<img src="images/g4.jpg" alt=" " class="img-responsive" />
+							</a>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-4  col-xs-6 w3_tab_img_left">
+						<div class="demo">
+							<a class="cm-overlay" href="images/g5.jpg">
+								<img src="images/g5.jpg" alt=" " class="img-responsive" />
+							</a>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-4  col-xs-6 w3_tab_img_left">
+						<div class="demo">
+							<a class="cm-overlay" href="images/g6.jpg">
+								<img src="images/g6.jpg" alt=" " class="img-responsive" />
+							</a>
+						</div>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div> -->
+
+
+		</div>
+	</div>
+	
+</div>
+<!--Gallery section ends here-->
+{% endblock content %}
+	

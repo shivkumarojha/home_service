@@ -1,0 +1,359 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<title>A2Z a Corporate Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
+	<!-- for-mobile-apps -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="a2z Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	<script> 
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!-- //for-mobile-apps -->
+	<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all" />
+	<!--banner slider  -->
+	<link href="{% static 'css/JiSlider.css' %}" rel="stylesheet">
+	<!-- //banner-slider -->
+
+	<!--clients slider  -->
+	<link href="{% static 'css/owl.carousel.css' %}" rel="stylesheet">
+
+	<link href="{% static 'css/font-awesome.css' %}" rel="stylesheet" type="text/css" media="all" />
+	<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+	<link href="//fonts.googleapis.com/css?family=Noto+Serif:400,400i,700,700i" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i" rel="stylesheet">
+
+</head>
+
+<body>
+	<!-- header -->
+	<div class="w3layouts-header">
+		<div class="container">
+
+			<div class="logo-nav-agileits">
+				<div class="logo-nav-left">
+					<h1>
+						<a href="{% url 'services:index' %}">
+							<span class="fa fa-home"></span>a2z
+							<span class="logo-title">home services</span>
+						</a>
+					</h1>
+				</div>
+
+				<div class="header-grid-left-wthree">
+					<div class="h3-title">
+						<h3>contact us</h3>
+					</div>
+					<ul>
+						<li>
+							<span class="fa fa-envelope" aria-hidden="true"></span>
+							<a href="mailto:{{ contact_info.email }}">{{ contact_info.email }}</a>
+						</li>
+						<li>
+							<span class="fa fa-phone" aria-hidden="true"></span>{{ contact_info.telephone_number }}</li>
+						<li>
+							<span class="fa fa-mobile" aria-hidden="true"></span>{{ contact_info.mobile_number }}
+						</li>
+					</ul>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="clearfix"> </div>
+			<div class="logo-nav-left1">
+				<nav class="navbar navbar-default">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">Menu
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+
+					<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+						<ul class="nav navbar-nav">
+							<li class="active">
+								<a href="{% url 'services:index' %}">Home</a>
+							</li>
+							<li>
+								<a href="{% url 'services:about' %}">about us</a>
+							</li>
+							<li>
+								<a href="{% url 'services:services' %}">services</a>
+							</li>
+							<li>
+								<a href="{% url 'services:projects' %}">Projects</a>
+							</li>
+							<li>
+								<a href="{% url 'services:plans' %}">plans</a>
+							</li>
+							<li>
+								<a href="{% url 'services:contact-us' %}">contact us</a>
+							</li>
+						</ul>
+					</div>
+
+				</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+
+    
+    {% block content %}
+        
+    {% endblock content %}
+        
+
+	<!-- footer -->
+	<div class="footer-main-w3_agile">
+		<div class="footer-dot">
+			<div class="container">
+				<div class="footer-bottom">
+					<div class="col-md-4 col-sm-6 col-xs-6 footer-grid1 address">
+						<h4>Contact Info</h4>
+						<ul>
+							<li>
+								<span class="fa fa-home" aria-hidden="true"></span>
+								<p>{{ contact_info.address }}</p>
+							</li>
+							<li>
+								<span class="fa fa-envelope-o" aria-hidden="true"></span>
+								<a href="mailto:{{ contact_info.email }}">{{ contact_info.email }}</a>
+							</li>
+							<li>
+								<span class="fa fa-phone" aria-hidden="true"></span>
+								<p>{{ contact_info.mobile_number }}</p>
+							</li>
+						</ul>
+					</div>
+					<div class="col-md-3 col-sm-6 col-xs-6 footer-grid1 res">
+						<h4>services</h4>
+						<ul>
+                            
+                            {% for service in services %}
+                                <li>
+                                    <a href="#">{{ service }}</a>
+                                </li>    
+                            {% endfor %}
+                                
+						</ul>
+					</div>
+					<!-- <div class="col-md-3 col-sm-6 col-xs-6 footer-grid1 ftr-img">
+						<h4>latest Posts</h4>
+						<ul>
+							<li>
+								<a href="single.html">
+									<img src="{% static 'images/t1.jpg' %}" alt=" " class="img-responsive" />
+								</a>
+							</li>
+							<li>
+								<a href="single.html">
+									<img src="{% static 'images/t2.jpg' %}" alt=" " class="img-responsive" />
+								</a>
+							</li>
+							<li>
+								<a href="single.html">
+									<img src="{% static 'images/t3.jpg' %}" alt=" " class="img-responsive" />
+								</a>
+							</li>
+							<li>
+								<a href="single.html">
+									<img src="{% static 'images/t4.jpg' %}" alt=" " class="img-responsive" />
+								</a>
+							</li>
+							<li>
+								<a href="single.html">
+									<img src="{% static 'images/t1.jpg' %}" alt=" " class="img-responsive" />
+								</a>
+							</li>
+							<li>
+								<a href="single.html">
+									<img src="{% static 'images/t2.jpg' %}" alt=" " class="img-responsive" />
+								</a>
+							</li>
+							<li>
+								<a href="single.html">
+									<img src="{% static 'images/t3.jpg' %}" alt=" " class="img-responsive" />
+								</a>
+							</li>
+							<li>
+								<a href="single.html">
+									<img src="{% static 'images/t2.jpg' %}" alt=" " class="img-responsive" />
+								</a>
+							</li>
+							<li>
+								<a href="single.html">
+									<img src="{% static 'images/t4.jpg' %}" alt=" " class="img-responsive" />
+								</a>
+							</li>
+						</ul>
+					</div> -->
+					<div class="col-md-2 col-sm-6 col-xs-6 footer-grid1">
+						<h4>legal</h4>
+						<ul>
+							<li>
+								<a href="{% url 'services:privacy' %}">privacy policy</a>
+							</li>
+							<li>
+								<a href="{% url 'services:terms' %}">terms of use</a>
+							</li>
+						</ul>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="agileinfo-subscribe-grid text-center">
+					<img src="{% static 'images/mail. png' %}" alt="">
+					<h4>stay upto date with our newsletter!</h4>
+					<p>Sign up to receive helpful Q&A, info on upcoming services and more.</p>
+					<form action="{% url 'services:newsletter' %}" method="post">
+						{% csrf_token %}
+						<input type="email" placeholder="Enter your email.." name="newsletter" required="">
+						<button type="submit" class="btn1">sign up</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="cpy-footer">
+		<div class="container">
+			<div class="footer-top">
+				<div class="logo-nav-left footer-top1">
+					<h2>
+						<a href="index.html">
+							<span class="fa fa-home logo-ftr"></span>a2z
+							<span class="logo-title">home services</span>
+						</a>
+					</h2>
+				</div>
+				<div class="footer-social">
+					<h4>connect with us</h4>
+					<ul>
+						<li>
+							<a href="#">
+								<span class="fa fa-facebook icon_facebook"></span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="fa fa-twitter icon_twitter"></span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="fa fa-dribbble icon_dribbble"></span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="fa fa-google-plus icon_g_plus"></span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<div class="cpy-text">
+			<p>© 2022 A2Z. All rights reserved | Design by
+				<a href="http://spvinfotech.com/">SPVInfoTech
+				</a>
+			</p>
+		</div>
+
+	</div>
+	<!--//footer  -->
+	<!-- js -->
+	<script src="{% static 'js/jquery-2.2.3.min.js' %}"></script>
+	<!-- //js-->
+
+
+	<!-- clients slider-->
+	<script src="{% static 'js/owl.carousel.js' %}"></script>
+	<script>
+		$(document).ready(function () {
+			$("#owl-demo").owlCarousel({
+				items: 1,
+				lazyLoad: true,
+				autoPlay:true,
+				navigation: true,
+				navigationText: false,
+				pagination: true,
+			});
+		});
+	</script>
+	<!-- //clients slider-->
+
+	<!--banner-slider-->
+	<script src="{% static 'js/JiSlider.js' %}"></script>
+	<script> 
+		$(window).load(function () {
+			$('#JiSlider').JiSlider({
+				color: '#fff',
+				start: 1,
+				reverse: false
+			}).addClass('ff')
+		})
+	</script>
+	<!-- //banner-slider -->
+	<!--search-bar-->
+	<script src="{% static 'js/main.js' %}"></script>
+	<!--//search-bar-->
+	<!-- start-smooth-scrolling -->
+	<script  src="{% static 'js/move-top.js' %}"></script>
+	<script  src="{% static 'js/easing.js' %}"></script>
+	<script> 
+		jQuery(document).ready(function ($) {
+			$(".scroll").click(function (event) {
+				event.preventDefault();
+				
+				$('html,body').animate({
+					scrollTop: $(this.hash).offset().top
+				}, 1000);
+			});
+		});
+	</script>
+	<!-- //end-smooth-scrolling -->
+	<!-- smooth-scrolling-of-move-up -->
+	<script> 
+		$(document).ready(function () {
+			/*
+			var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+			};
+			*/
+			
+			$().UItoTop({
+				easingType: 'easeOutQuart'
+			});
+			
+		});
+	</script>
+	<script  src="{% static 'js/SmoothScroll.min.js' %}"></script>
+	<script src="{% static 'js/numscroller-1.0.js' %}"></script>
+	
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="{% static 'js/bootstrap.js' %}"></script>
+
+	
+
+</body>
+
+</html>	

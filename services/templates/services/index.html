@@ -1,0 +1,224 @@
+ {% extends "services/base.html" %}
+{% load static %}
+ {% block content %}
+   	<!-- banner -->
+	<div class="banner-silder">
+		<div id="JiSlider" class="jislider">
+			<ul>
+				<li>
+					<div class="banner-top banner-top1">
+						<div class="container">
+							<div class="banner-info info2">
+								<h3>one stop home services</h3>
+								<p>let us do it for you.</p>
+
+							</div>
+						</div>
+					</div>
+				</li>
+
+
+				<li>
+					<div class="banner-top banner-top2">
+						<div class="container">
+							<div class="banner-info bg3 info2">
+								<h3>one click repair service</h3>
+								<p>repair.&nbsp;improve.&nbsp;maintain</p>
+							</div>
+
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="banner-top banner-top3">
+						<div class="container">
+							<div class="banner-info bg3">
+								<h3>Property Maintenance Services</h3>
+								<p>one call does it all.</p>
+							</div>
+
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<!-- //banner -->
+		<!-- banner bottom -->
+		<div class="banner-btm">
+			<div class="container">
+				<div class="banner-bottom-main">
+					<div class="col-md-4 banner-btmg1">
+
+						<div class="form-text">
+							<h3>Looking for a Handyman?</h3>
+							<p>We solve your Home repair needs!</p>
+							<img src="{% static 'images/f1.png' %}" alt="" />
+						</div>
+						
+						<form action="#" method="post" class="banner_form" id="enquiryForm">
+							{% csrf_token %}
+							
+							<div class="sec-left">
+								<label class="contact-form-text">Name</label>
+								<!-- <input placeholder="your name " name="name" type="text" required=""> -->
+								{{ form.name }}
+							</div>
+							<div class="sec-right">
+								<label class="contact-form-text">Email</label>
+								{{ form.email }}
+								<!-- <input placeholder="xxx@xx.com " name="email" type="email" required=""> -->
+							</div>
+							<div class="sec-left">
+								<label class="contact-form-text">Mobile no.</label>
+								{{ form.mobile_number}}
+								<!-- <input placeholder=" XXXXXX" name="number" type="text" required=""> -->
+							</div>
+							<div class="form-tx">
+								<label class="contact-form-text">Address</label>
+								{{ form.address }}
+								<!-- <textarea placeholder="your address" required=""></textarea> -->
+							</div>
+							<div class="form-select sec-right">
+								<label class="contact-form-text">Select Service</label>
+								{{ form.select_service }}
+								<!-- <select>
+									<option value="0">---- SELECT ----</option>
+									<option value="1">Electrical Service</option>
+									<option value="2">Plumbing Service</option>
+									<option value="3">Painting</option>
+									<option value="4">Carpentry</option>
+									<option value="5">Gardening</option>
+									<option value="6">Other</option>
+								</select> -->
+							</div>
+							<input type="submit" value="Submit">
+						</form>
+					</div>
+					<div class="col-md-8 banner-btm-grid2">
+						<div class="col-md-4 banner-grid2">
+							<div class="banner-subg1">
+								<h3>maintenance</h3>
+								<p>Leave the maintenance to us, so you can enjoy your home.</p>
+								<span class="fa fa-cog" aria-hidden="true"></span>
+								<div class="read-btn">
+									<a href="{% url 'services:about' %}">view more</a>
+								</div>
+							</div>
+							<div class="banner-subg1">
+								<h3>cleaning</h3>
+								<p>We make your home sparkle, from top to bottom. Contact us for professional cleaning services.</p>
+								<span class="fa fa-check-square-o" aria-hidden="true"></span>
+								<div class="read-btn">
+									<a href="{% url 'services:about' %}">view more</a>
+								</div>
+							</div>
+
+						</div>
+						<div class="col-md-4 banner-grid2">
+							<div class="banner-subg1">
+								<h3>repair</h3>
+								<p>When something breaks, we're there to fix it. Trust us with all your home repair needs</p>
+								<span class="fa fa-yelp" aria-hidden="true"></span>
+								<div class="read-btn">
+									<a href="{% url 'services:about' %}">view more</a>
+								</div>
+							</div>
+							<div class="banner-subg1">
+								<h3>improvement</h3>
+								<p>Transform your home into the space you've always wanted. Contact us for professional home improvement services.</p>
+								<span class="fa fa-gg" aria-hidden="true"></span>
+								<div class="read-btn">
+									<a href="{% url 'services:about' %}">view more</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+		<!-- //banner bottom -->
+		<!-- about -->
+		<div class="agile-about-main">
+			<div class="col-md-4 about-left">
+				<div class="about-main-bg text-center">
+					<h4 class="about-title">Why</h4>
+					<h4 class="sub">
+						<span>c</span>hoose
+						<span>u</span>s?</h4>
+				</div>
+			</div>
+			<div class="col-md-8 about-bottom-g1">
+				<h4>One Stop Solution for your Complete Home Maintenance</h4>
+				<!-- <h4>get easy home repairs and upgrades with professional home service providers</h4> your complete home solution.-->
+				<div class="about-grid">
+					<div class="about-bottom-right">
+						<div class="abouthome-grid">
+							<span class="hi-icon hi-icon-archive fa fa-check"> </span>
+						</div>
+						<div class="about-bottom">
+							<h5>vision</h5>
+							<p>Making home maintenance easy and stress-free for everyone.</p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="about-bottom-right">
+						<div class="abouthome-grid">
+							<span class="hi-icon hi-icon-archive  fa fa-book"> </span>
+						</div>
+						<div class="about-bottom">
+							<h5>affordable</h5>
+							<p>We make our services more affordable so that anyone can take it.</p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class=" about-bottom-right">
+						<div class="abouthome-grid">
+							<span class="hi-icon hi-icon-archive fa fa-photo"> </span>
+						</div>
+						<div class="about-bottom">
+							<h5>quality</h5>
+							<p>Our quality are at most.</p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class=" about-bottom-right">
+						<div class="abouthome-grid">
+							<span class="hi-icon hi-icon-archive fa fa-briefcase"> </span>
+						</div>
+						<div class="about-bottom">
+							<h5>24*7 support</h5>
+							<p>We are always on for our customers. Any need?Just give us a call.</p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+				<div class="abt-img">
+					<img src="{% static 'images/a1. png' %}" alt="" class="img-responsive" />
+				</div>
+				<div class="clearfix"></div>
+			</div>
+
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<!-- //about -->
+	<!--  about bottom -->
+	<div class="w3ls-section">
+		<div class="container">
+			<div class="main-bottom">
+				<div class="col-md-6 col-sm-6 mb-left">
+
+				</div>
+				<div class="col-md-6 col-sm-6 mb-right">
+					<h4>service you can trust</h4>
+					<p>protect all your home appliances & systems.</p>
+					<a href="{% url 'services:services' %}">view all services</a>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!--  //about bottom -->
+ {% endblock content %}

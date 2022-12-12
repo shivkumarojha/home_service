@@ -1,0 +1,29 @@
+{% extends "services/base.html" %}
+
+
+{% block content %}
+<style>
+ .thank {
+    padding-top: 100px;
+    padding-bottom: 100px;
+ }
+ p{
+    font-size: medium;
+    font-weight: 400;
+    color: black;
+ }
+</style>
+<div class="thank container text-center">
+   {% if message %}
+      <h1 class="text-danger thank">{{ message }}</h1>
+   {% else %}
+
+      <h1 class="text-danger">Thank you for your submission!</h1>
+      <p>We will review your submission and get back to you as soon as possible.</p>
+      <p>In the meantime, feel free to explore our website and learn more about what we do.</p>
+   </div>
+   
+   {% endif %}
+
+{% endblock content %}
+    

@@ -1,0 +1,64 @@
+{% extends 'services/base.html' %}
+
+
+{% block content %}
+<div class="banner-bg2 ">
+	<div class="banner-info bg3 inner">
+		<h3>one click repair service</h3>
+		<p>repair.&nbsp;improve.&nbsp;maintain</p>
+	</div>
+</div>
+<!-- breadcrumbs -->
+<div class="breadcrumbs-w3l">
+	<div class="container">
+		<span class="breadcrumbs">
+			<a href="index.html">Home</a> |
+			<span>Contact Us</span>
+		</span>
+	</div>
+</div>
+<!-- //breadcrumbs -->
+<!-- contact -->
+<div class="w3ls-section banner-single">
+	<div class="container">
+		<h4 class="main-title">contact us</h4>
+		<div class="about-inner-main">
+			<div class="col-md-6 contact-left">
+				<div class="agile-contact-top">
+					<h4>address </h4>
+					<p>1234k Avenue,Block-4,New York City.</p>
+				</div>
+				<div class="contact-bottom">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3563.436589715364!2d83.42270805868178!3d26.73044051780718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39915cac4ea56757%3A0x9289cf036dea4c44!2sMahadev%20Jharkhandi%2C%20Singhariya%2C%20Awas%20Vikas%20Colony%2C%20Kunraghat%2C%20Gorakhpur%2C%20Uttar%20Pradesh%20273008!5e0!3m2!1sen!2sin!4v1670849201241!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				</div>
+			</div>
+			<div class="col-md-6 w3layouts-reg-form contact-form-row-agileinfo">
+				<h4 class="form-con-txt">send us a message</h4>
+				<form action="{% url 'services:send_message' %}" method="post" class="banner_form contact-inner-form">
+					{% csrf_token %}
+					<div class="contact-form-left contact-field1">
+						<div class="sec-left">
+							<label class="contact-form-text">Name</label>
+							<input placeholder="your name" name="name" type="text" required="">
+						</div>
+						<div class="sec-right">
+							<label class="contact-form-text">Email</label>
+							<input placeholder="xxx@xx.com " name="email" type="email" required="">
+						</div>
+					</div>
+					<div class="contact-form-right contact-field2">
+						<input type="submit" value="send message">
+					</div>
+					<div class="clearfix"></div>
+					<div class="form-tx contact-field3">
+						<label class="contact-form-text">Subject</label>
+						<textarea placeholder="Write your message" required="" name="subject"></textarea>
+					</div>
+				</form>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+{% endblock content %}
+	
