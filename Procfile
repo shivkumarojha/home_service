@@ -1,1 +1,1 @@
-web: gunicorn 'home_service.wsgi'
+web: gunicorn home_service.wsgi --log-file-
